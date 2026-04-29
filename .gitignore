@@ -55,3 +55,6 @@ __pycache__/
 # sensitive local memory/config
 memory/github-config.md
 state/usage-events/
+
+# runtime usage logs
+state/usage-events/

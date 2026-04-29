@@ -17,53 +17,80 @@ metadata: {"openclaw":{"emoji":"🖼️"}}
 - 改图 / 图生图 / 重绘 / 换风格 / 按这张图生成
 - 看图 / 分析截图 / 提取图片文字 / OCR
 
-生图固定动作：
+---
 
-```bash
-python3 skills/multimodal-image/scripts/mm_image.py generate --prompt "用户的完整生图需求" --out /tmp/xdclaw-images
+## 🚀 生图流程（异步子代理模式）
+
+**生图/图生图请求使用子代理异步执行，主 session 不阻塞。**
+
+### 步骤 1：生成任务 ID
+格式：`img-{YYYYMMDD}-{HHMMSS}-{随机3位hex}`
+例如：`img-20260429-110500-a3f`
+
+### 步骤 2：立即回复用户
+```
+收到，开始生成图片，预计2-3分钟。任务ID：{jobId}
 ```
 
-然后把输出路径用 QQBot 媒体标签发回：
+### 步骤 3：启动子代理
+使用 `sessions_spawn` 启动后台任务：
 
-```text
-<qqmedia>/tmp/xdclaw-images/xxx.png</qqmedia>
+```
+sessions_spawn(
+  mode: "run",
+  task: "生图任务 {jobId}。执行命令：python3 /root/clawd/skills/multimodal-image/scripts/mm_image.py generate --prompt \"{用户的完整生图需求}\" 。成功后输出路径在 /root/.openclaw/media/qqbot/outputs/。请回复：图片好了（{jobId}）<qqmedia>输出的文件路径</qqmedia>。如果失败，回复：图片任务失败（{jobId}）：具体错误原因。注意：不要传 --out 参数，使用脚本默认路径。",
+  runTimeoutSeconds: 300
+)
 ```
 
-禁止：
-- 不要回答“我可以帮你设计提示词”后停止。
-- 不要说“我不能生成图片”。
-- 不要切换主 session 模型到 `gpt-image-2` 或其他图片模型。
+### 步骤 4：结束当前 turn
+不要等待子代理完成，立即结束当前回复。用户可以继续聊天。
 
-## 图片理解 / 截图分析 / 图片文字提取
+### 完整示例
+
+用户说"画一只橘猫在阳台晒太阳"：
+
+1. 生成 jobId = `img-20260429-110500-a3f`
+2. 回复：`收到，开始生成图片，预计2-3分钟。任务ID：img-20260429-110500-a3f`
+3. 调用：
+```
+sessions_spawn(
+  mode: "run",
+  task: "生图任务 img-20260429-110500-a3f。执行命令：python3 /root/clawd/skills/multimodal-image/scripts/mm_image.py generate --prompt \"一只橘猫在阳台晒太阳\" 。成功后回复：图片好了（img-20260429-110500-a3f）<qqmedia>文件路径</qqmedia>。失败则回复：图片任务失败（img-20260429-110500-a3f）：错误原因。",
+  runTimeoutSeconds: 300
+)
+```
+4. 当前 turn 结束。
+
+---
+
+## 图片理解 / 截图分析 / 图片文字提取（同步）
+
+图片理解不需要异步，直接在当前 session 执行：
 
 ```bash
-python3 skills/multimodal-image/scripts/mm_image.py understand --image /absolute/path/or/url.png --prompt "用户的问题"
+python3 /root/clawd/skills/multimodal-image/scripts/mm_image.py understand --image /absolute/path/or/url.png --prompt "用户的问题"
 ```
 
 可多图：重复 `--image`。
 
-适用：看图、截图排障、图片文字/表格理解、图片问答、图片对比。不要再用传统 OCR skill；需要提取文字时也用 `understand`。
+适用：看图、截图排障、图片文字/表格理解、图片问答、图片对比。
 
-## 生图
+---
 
-```bash
-python3 skills/multimodal-image/scripts/mm_image.py generate --prompt "图片提示词" --out /tmp/xdclaw-images
+## 图生图 / 改图（异步子代理模式）
+
+和生图流程一样，使用子代理异步执行：
+
+1. 生成 jobId
+2. 回复：`收到，开始图生图/改图，预计2-3分钟。参考图{N}张。任务ID：{jobId}`
+3. 调用 sessions_spawn，task 中使用 edit 子命令：
 ```
-
-成功后会输出本地文件路径。QQ 回复时用：
-
-```text
-<qqmedia>/path/to/generated.png</qqmedia>
+python3 /root/clawd/skills/multimodal-image/scripts/mm_image.py edit --image /absolute/source.png --prompt "改图需求"
 ```
+4. 结束当前 turn。
 
-## 图生图 / 改图
-
-```bash
-python3 skills/multimodal-image/scripts/mm_image.py edit --image /absolute/source.png --prompt "改图需求" --out /tmp/xdclaw-images
-```
-
-成功后输出本地文件路径，用 `<qqmedia>路径</qqmedia>` 发回。
-
+---
 
 ## 失败防循环
 
@@ -76,27 +103,17 @@ python3 skills/multimodal-image/scripts/mm_image.py edit --image /absolute/sourc
 ## 规则
 
 - 不要使用 `/model` 把当前会话切到 `qwen-vl-*`、`gpt-image-*`、`*-image`。
-- 简单任务直接用本脚本；复杂多步任务先用脚本获取视觉结果，再在主 session 总结。
+- 不要用 exec/curl 自己调 `/images/edits`，走本 skill 的 `edit` 子命令。
 - 如果 `gpt-image-2` 失败，脚本会自动返回错误；不要假装已生成。
+- 502/上游错误时，子代理内最多重试一次，仍失败则返回具体错误信息。
 
+## ⚠️ 输出路径规则（重要）
 
-## ⏳ 生图耗时规则
-
-生图/图生图可能需要 2-3 分钟。QQBot 网关层已优先把明确的生图/图生图请求改为异步任务；如果请求已经进入 agent 并需要手动调用 generate/edit，调用后要等待工具完成，不要因为 60 秒未返回就结束或重复调用。若最终失败，按失败防循环规则最多重试一次。
-
-
-## 🧪 图生图事实校验
-
-`gpt-image-2` `/images/edits` 已用 QQ 实际 JPG 复测成功。遇到一次 502/上游错误时，不要声称 gpt-image-2 不支持 edits 或“上游没配置”；按失败防循环规则最多重试一次，仍失败才返回具体错误。
-
+**绝对不要手动指定 `--out /tmp/xdclaw-images` 或其他自定义路径。**
+脚本默认输出到 `/root/.openclaw/media/qqbot/outputs/`，这是 OpenClaw QQ Bot 模块允许的媒体目录。
+手动指定其他路径会导致图片无法发送（被安全校验拦截）。
 
 ## 🧪 图生图事实声明
 
-`gpt-image-2` 的 `/images/edits` 端点**实测可用**（QQ 实际 JPG 文件复测成功，非小 PNG）。
-
-如果调用返回 502 / upstream error，是**上游偶发错误**或 New API 代理偶发问题，不是 gpt-image-2 不支持 edits。
-
-**禁止行为：**
-- 不要声称 "gpt-image-2 不支持 edits" 或 "上游没配置"。
-- 不要用 exec/curl 自己调 `/images/edits`，走 `multimodal-image` skill 的 `edit` 子命令。
-- 502/上游错误时，最多重试一次（等待 10 秒），仍失败则返回具体错误信息，不继续尝试其他端点。
+`gpt-image-2` 的 `/images/edits` 端点**实测可用**。
+如果调用返回 502 / upstream error，是上游偶发错误，不是 gpt-image-2 不支持 edits。
