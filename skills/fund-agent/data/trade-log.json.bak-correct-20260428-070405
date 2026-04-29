@@ -1,0 +1,31 @@
+[
+  {
+    "action": "BUY",
+    "code": "510300",
+    "name": "沪深300ETF",
+    "amount": 1000,
+    "price": 4.15,
+    "timestamp": "2026-04-23T06:58:20Z"
+  },
+  {
+    "time": "2026-04-27 03:04:35",
+    "action": "buy",
+    "code": "600519",
+    "price": 1700.0,
+    "qty": 100,
+    "amount": 170000.0
+  },
+  {
+    "time": "2026-04-28 07:03:34",
+    "timestamp": "2026-04-28T07:03:34Z",
+    "action": "buy",
+    "asset_type": "fund",
+    "code": "161028",
+    "name": "富国中证新能源汽车指数C",
+    "ratio": "1/4",
+    "basis": "用户确认：富国中证新能源汽车指数C 161028 买了1/4",
+    "amount": null,
+    "shares": null,
+    "note": "已记录操作；未更新 positions.json，等待金额/份额确认后精确调整"
+  }
+]

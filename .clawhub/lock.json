@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "skills": {
+    "ai-text-humanizer": {
+      "version": "1.0.0",
+      "installedAt": 1775705967716
+    },
+    "de-ai-polish": {
+      "version": "1.0.0",
+      "installedAt": 1775705972533
+    },
+    "de-ai-ify": {
+      "version": "1.0.0",
+      "installedAt": 1775705976982
+    },
+    "excel-xlsx": {
+      "version": "1.0.2",
+      "installedAt": 1775705980796
+    }
+  }
+}

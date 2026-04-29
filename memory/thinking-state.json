@@ -1,0 +1,16 @@
+{
+  "lastHeartbeatRun": "2026-04-29T00:54:00Z",
+  "lastThinkingRun": "2026-04-28T22:24:00Z",
+  "lastExploreRun": "2026-04-28T21:54:00Z",
+  "lastPatrolStatus": {
+    "disk": "28%",
+    "memory": "75.8%",
+    "gateway": "200",
+    "newApi": "000",
+    "containers": "unknown (docker unavailable)",
+    "timestamp": "2026-04-29T00:54:00Z"
+  },
+  "todayRequestCount": 2,
+  "lastPatrolDate": "2026-04-28",
+  "lastDate": "2026-04-29"
+}

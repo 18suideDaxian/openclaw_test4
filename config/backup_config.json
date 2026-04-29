@@ -1,0 +1,73 @@
+{
+  "backup_config": {
+    "enabled": true,
+    "backup_dir": "/root/clawd_backups",
+    "retention_days": 7,
+    "max_backups": 10,
+    "schedule": {
+      "daily": "02:00",
+      "weekly": "sunday@03:00",
+      "monthly": "1@04:00"
+    },
+    "backup_items": [
+      {
+        "name": "core_configs",
+        "paths": [
+          "AGENTS.md",
+          "SOUL.md",
+          "TOOLS.md",
+          "IDENTITY.md",
+          "USER.md",
+          "MEMORY.md",
+          "HEARTBEAT.md",
+          "BOOTSTRAP.md"
+        ],
+        "enabled": true
+      },
+      {
+        "name": "memory_system",
+        "paths": [
+          "memory/"
+        ],
+        "enabled": true
+      },
+      {
+        "name": "skills",
+        "paths": [
+          "skills/"
+        ],
+        "enabled": true
+      },
+      {
+        "name": "scripts",
+        "paths": [
+          "scripts/"
+        ],
+        "enabled": true
+      },
+      {
+        "name": "configs",
+        "paths": [
+          "config/"
+        ],
+        "enabled": true
+      },
+      {
+        "name": "openclaw_system",
+        "paths": [
+          "/root/.openclaw/openclaw.json",
+          "/root/.openclaw/extensions/"
+        ],
+        "enabled": true
+      }
+    ],
+    "notification": {
+      "enabled": true,
+      "channel": "qqbot",
+      "chat_id": "qqbot:c2c:F8433B810F4750F15D5DB5435B3797BE"
+    },
+    "last_backup": "2026-04-13T10:13:30.770262",
+    "backup_count": 1,
+    "config_version": "1.0.0"
+  }
+}

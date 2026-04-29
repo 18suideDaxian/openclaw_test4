@@ -1,0 +1,366 @@
+{
+  "update_time": "2026-04-28T06:40:03.314234",
+  "scores": [
+    {
+      "name": "易方达人工智能ETF联接C",
+      "code": "016192",
+      "category": "科技",
+      "market_value": 3027.98,
+      "holding_pnl": 407.91,
+      "pnl_ratio": 13.47,
+      "scores": {
+        "收益能力": 8,
+        "稳定性": 4,
+        "排名": 7,
+        "规模": 8,
+        "经理": 5
+      },
+      "total_score": 6.5,
+      "grade": "B+",
+      "action": "⚠️ 持有观望"
+    },
+    {
+      "name": "国泰黄金ETF联接C",
+      "code": "004253",
+      "category": "贵金属",
+      "market_value": 4025.16,
+      "holding_pnl": 72.56,
+      "pnl_ratio": 1.8,
+      "scores": {
+        "收益能力": 4,
+        "稳定性": 8,
+        "排名": 7,
+        "规模": 8,
+        "经理": 5
+      },
+      "total_score": 6.3,
+      "grade": "C",
+      "action": "🟡 考虑减仓"
+    },
+    {
+      "name": "华夏国证自由现金流ETF联接C",
+      "code": "018826",
+      "category": "宽基",
+      "market_value": 6062.11,
+      "holding_pnl": 174.29,
+      "pnl_ratio": 2.88,
+      "scores": {
+        "收益能力": 4,
+        "稳定性": 8,
+        "排名": 7,
+        "规模": 8,
+        "经理": 5
+      },
+      "total_score": 6.3,
+      "grade": "C",
+      "action": "🟡 考虑减仓"
+    },
+    {
+      "name": "天弘中证工业有色金属主题ETF联接C",
+      "code": "018953",
+      "category": "有色金属",
+      "market_value": 2703.87,
+      "holding_pnl": 140.54,
+      "pnl_ratio": 5.2,
+      "scores": {
+        "收益能力": 6,
+        "稳定性": 6,
+        "排名": 7,
+        "规模": 6,
+        "经理": 5
+      },
+      "total_score": 6.1,
+      "grade": "C",
+      "action": "🟡 考虑减仓"
+    },
+    {
+      "name": "天弘中证电网设备主题指数C",
+      "code": "019506",
+      "category": "电力设备",
+      "market_value": 1799.67,
+      "holding_pnl": 99.67,
+      "pnl_ratio": 5.54,
+      "scores": {
+        "收益能力": 6,
+        "稳定性": 6,
+        "排名": 7,
+        "规模": 6,
+        "经理": 5
+      },
+      "total_score": 6.1,
+      "grade": "C",
+      "action": "🟡 考虑减仓"
+    },
+    {
+      "name": "富国中证新能源汽车指数C",
+      "code": "161028",
+      "category": "新能源",
+      "market_value": 1986.85,
+      "holding_pnl": 146.22,
+      "pnl_ratio": 7.36,
+      "scores": {
+        "收益能力": 6,
+        "稳定性": 6,
+        "排名": 7,
+        "规模": 6,
+        "经理": 5
+      },
+      "total_score": 6.1,
+      "grade": "C",
+      "action": "🟡 考虑减仓"
+    },
+    {
+      "name": "永赢国证商用卫星通信ETF联接C",
+      "code": "018037",
+      "category": "通信",
+      "market_value": 2085.46,
+      "holding_pnl": 29.19,
+      "pnl_ratio": 1.4,
+      "scores": {
+        "收益能力": 4,
+        "稳定性": 8,
+        "排名": 7,
+        "规模": 6,
+        "经理": 5
+      },
+      "total_score": 6.0,
+      "grade": "C",
+      "action": "🟡 考虑减仓"
+    },
+    {
+      "name": "广发稀有金属主题ETF联接C",
+      "code": "016199",
+      "category": "有色金属",
+      "market_value": 1011.02,
+      "holding_pnl": 61.38,
+      "pnl_ratio": 6.07,
+      "scores": {
+        "收益能力": 6,
+        "稳定性": 6,
+        "排名": 7,
+        "规模": 5,
+        "经理": 5
+      },
+      "total_score": 6.0,
+      "grade": "C",
+      "action": "🟡 考虑减仓"
+    },
+    {
+      "name": "大成有色金属期货ETF联接C",
+      "code": "007911",
+      "category": "有色金属",
+      "market_value": 1733.96,
+      "holding_pnl": 15.98,
+      "pnl_ratio": 0.92,
+      "scores": {
+        "收益能力": 4,
+        "稳定性": 8,
+        "排名": 7,
+        "规模": 6,
+        "经理": 5
+      },
+      "total_score": 6.0,
+      "grade": "C",
+      "action": "🟡 考虑减仓"
+    },
+    {
+      "name": "天弘中证光伏产业指数C",
+      "code": "011103",
+      "category": "新能源",
+      "market_value": 1660.12,
+      "holding_pnl": 4.41,
+      "pnl_ratio": 0.27,
+      "scores": {
+        "收益能力": 4,
+        "稳定性": 8,
+        "排名": 7,
+        "规模": 6,
+        "经理": 5
+      },
+      "total_score": 6.0,
+      "grade": "C",
+      "action": "🟡 考虑减仓"
+    },
+    {
+      "name": "富国中证电池主题ETF联接C",
+      "code": "014202",
+      "category": "新能源",
+      "market_value": 1489.54,
+      "holding_pnl": 116.4,
+      "pnl_ratio": 7.81,
+      "scores": {
+        "收益能力": 6,
+        "稳定性": 6,
+        "排名": 7,
+        "规模": 5,
+        "经理": 5
+      },
+      "total_score": 6.0,
+      "grade": "C",
+      "action": "🟡 考虑减仓"
+    },
+    {
+      "name": "广发纳斯达克100ETF联接(QDII)C",
+      "code": "270042",
+      "category": "美股",
+      "market_value": 800.16,
+      "holding_pnl": 30.16,
+      "pnl_ratio": 3.77,
+      "scores": {
+        "收益能力": 4,
+        "稳定性": 8,
+        "排名": 7,
+        "规模": 5,
+        "经理": 5
+      },
+      "total_score": 5.9,
+      "grade": "C",
+      "action": "🟡 考虑减仓"
+    },
+    {
+      "name": "汇添富弘瑞回报混合C",
+      "code": "004299",
+      "category": "混合",
+      "market_value": 318.56,
+      "holding_pnl": 16.84,
+      "pnl_ratio": 5.29,
+      "scores": {
+        "收益能力": 6,
+        "稳定性": 6,
+        "排名": 7,
+        "规模": 3,
+        "经理": 5
+      },
+      "total_score": 5.7,
+      "grade": "C",
+      "action": "🟡 考虑减仓"
+    },
+    {
+      "name": "嘉实新能源新材料股票C",
+      "code": "003985",
+      "category": "新能源",
+      "market_value": 378.46,
+      "holding_pnl": 28.46,
+      "pnl_ratio": 7.52,
+      "scores": {
+        "收益能力": 6,
+        "稳定性": 6,
+        "排名": 7,
+        "规模": 3,
+        "经理": 5
+      },
+      "total_score": 5.7,
+      "grade": "C",
+      "action": "🟡 考虑减仓"
+    },
+    {
+      "name": "前海开源金银珠宝混合C",
+      "code": "002207",
+      "category": "贵金属",
+      "market_value": 333.17,
+      "holding_pnl": 13.17,
+      "pnl_ratio": 3.95,
+      "scores": {
+        "收益能力": 4,
+        "稳定性": 8,
+        "排名": 7,
+        "规模": 3,
+        "经理": 5
+      },
+      "total_score": 5.6,
+      "grade": "C",
+      "action": "🟡 考虑减仓"
+    },
+    {
+      "name": "永赢高端装备智选混合C",
+      "code": "017613",
+      "category": "高端制造",
+      "market_value": 1145.3,
+      "holding_pnl": -3.05,
+      "pnl_ratio": -0.27,
+      "scores": {
+        "收益能力": 3,
+        "稳定性": 8,
+        "排名": 4,
+        "规模": 5,
+        "经理": 5
+      },
+      "total_score": 5.0,
+      "grade": "C",
+      "action": "🟡 考虑减仓"
+    },
+    {
+      "name": "天弘中证农业主题ETF联接C",
+      "code": "010770",
+      "category": "农业",
+      "market_value": 916.06,
+      "holding_pnl": -13.94,
+      "pnl_ratio": -1.52,
+      "scores": {
+        "收益能力": 3,
+        "稳定性": 8,
+        "排名": 4,
+        "规模": 5,
+        "经理": 5
+      },
+      "total_score": 5.0,
+      "grade": "C",
+      "action": "🟡 考虑减仓"
+    },
+    {
+      "name": "中银港股通医药混合发起C",
+      "code": "020398",
+      "category": "港股医药",
+      "market_value": 500.0,
+      "holding_pnl": 0,
+      "pnl_ratio": 0.0,
+      "scores": {
+        "收益能力": 4,
+        "稳定性": 8,
+        "排名": 4,
+        "规模": 3,
+        "经理": 5
+      },
+      "total_score": 5.0,
+      "grade": "C",
+      "action": "🟡 考虑减仓"
+    },
+    {
+      "name": "广发电力公用事业ETF联接C",
+      "code": "018964",
+      "category": "公用事业",
+      "market_value": 597.96,
+      "holding_pnl": -2.04,
+      "pnl_ratio": -0.34,
+      "scores": {
+        "收益能力": 3,
+        "稳定性": 8,
+        "排名": 4,
+        "规模": 3,
+        "经理": 5
+      },
+      "total_score": 4.7,
+      "grade": "D",
+      "action": "🔴 建议清仓"
+    },
+    {
+      "name": "博时标普石油天然气C",
+      "code": "006133",
+      "category": "能源",
+      "market_value": 1655.17,
+      "holding_pnl": -141.56,
+      "pnl_ratio": -8.55,
+      "scores": {
+        "收益能力": 1,
+        "稳定性": 6,
+        "排名": 4,
+        "规模": 6,
+        "经理": 5
+      },
+      "total_score": 4.0,
+      "grade": "D",
+      "action": "🔴 建议清仓"
+    }
+  ],
+  "average_score": 5.7
+}

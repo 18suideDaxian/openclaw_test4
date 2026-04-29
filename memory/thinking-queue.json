@@ -1,0 +1,7 @@
+[
+  {
+    "time": "2026-04-28T20:24:00Z",
+    "question": "心跳连续发现 docker 不可用与 New API HTTP=000，是否是当前运行环境隔离导致巡查误报，还是宿主 New API 真异常？",
+    "source": "heartbeat"
+  }
+]

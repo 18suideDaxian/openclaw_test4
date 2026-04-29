@@ -1,0 +1,18 @@
+[Unit]
+Description=OpenClaw Automatic Backup Service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=60
+User=root
+WorkingDirectory=/root/clawd
+ExecStart=/usr/bin/python3 /root/clawd/scripts/auto_backup.py backup
+StandardOutput=append:/root/clawd/logs/backup_service.log
+StandardError=append:/root/clawd/logs/backup_service_error.log
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

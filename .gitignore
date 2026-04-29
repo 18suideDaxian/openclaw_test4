@@ -1,0 +1,57 @@
+# OpenClaw 本地文件
+openclaw-test2/
+.git-credentials
+config/
+logs/
+memory/2026-04-13.md
+scripts/
+start_persistent_agent.sh
+
+# 系统文件
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Node/OpenClaw 运行时
+node_modules/
+.openclaw/
+*.state.json.openclaw/qqbot/downloads/
+.openclaw/qqbot/images/
+.openclaw/image-server/
+tmp/*.jpg
+tmp/*.jpeg
+tmp/*.png
+tmp/*.gif
+tmp/*.webp
+tmp/*.pdf
+tmp/*.doc
+tmp/*.docx
+tmp/*.xls
+tmp/*.xlsx
+tmp/*.ppt
+tmp/*.pptx
+tmp/*.zip
+tmp/*.rar
+tmp/*.7z
+tmp/*.mp3
+tmp/*.mp4
+tmp/*.wav
+tmp/*.ogg
+tmp/*.avi
+tmp/*.mov
+__pycache__/
+*.pyc
+.env
+*.key
+*.pem
+.openclaw/qqbot/downloads/
+*.mp4
+*.mp3
+*.wav
+*.zip
+*.rar
+
+# sensitive local memory/config
+memory/github-config.md
+state/usage-events/

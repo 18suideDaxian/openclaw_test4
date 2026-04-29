@@ -1,0 +1,20 @@
+{
+  "positions": [
+    {
+      "name": "示例基金A",
+      "market_value": 1000.0,
+      "daily_pnl": 10.0,
+      "holding_pnl": 50.0,
+      "cumulative_pnl": 30.0,
+      "holding_pct": 5.0,
+      "pct_of_portfolio": 1.0,
+      "status": "holding"
+    }
+  ],
+  "closed_positions": [],
+  "total_market_value": 1000.0,
+  "total_cumulative_loss": 0,
+  "last_update": "2026-01-01T00:00:00Z",
+  "risk_level": "low",
+  "risk_score": 20
+}

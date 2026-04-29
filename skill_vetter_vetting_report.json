@@ -1,0 +1,39 @@
+{
+  "skill": "skill-vetter",
+  "source": "ClawHub",
+  "author": "@spclaudehome",
+  "version": "1.0.0",
+  "files_reviewed": 2,
+  "red_flags": [
+    "curl/wget 到未知 URL",
+    "请求凭证/令牌/API 密钥",
+    "访问敏感配置文件",
+    "访问敏感记忆文件",
+    "使用 base64 解码",
+    "使用 eval() 或 exec()",
+    "请求提升权限",
+    "访问浏览器 cookies/sessions"
+  ],
+  "permissions": {
+    "Files": [
+      "读取技能文件",
+      "读取 GitHub API 响应"
+    ],
+    "Network": [
+      "访问 GitHub API (api.github.com)",
+      "访问 raw.githubusercontent.com"
+    ],
+    "Commands": [
+      "curl (用于获取数据)",
+      "jq (用于解析 JSON)"
+    ]
+  },
+  "risk_level": "🟢 LOW",
+  "verdict": "SAFE TO INSTALL",
+  "notes": [
+    "这是一个元技能（meta-skill），用于审查其他技能",
+    "仅包含文档和审查协议，无可执行代码",
+    "权限需求合理，仅限于其声明目的",
+    "来自可信来源，有良好的社区验证"
+  ]
+}

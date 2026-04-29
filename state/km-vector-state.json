@@ -1,0 +1,45 @@
+{
+  "files": {
+    "k001-user-profile.md": {
+      "hash": "434831a6666079dc7d6bab2f0a1cfe87",
+      "point_ids": [
+        1
+      ],
+      "chunks": 1
+    },
+    "k002-ops-knowledge.md": {
+      "hash": "acc924cae493e0858ef5202a68310149",
+      "point_ids": [
+        2
+      ],
+      "chunks": 1
+    },
+    "k002-model-configuration.md": {
+      "hash": "7d39c4ebf1dd6ea380f4560039058c8e",
+      "point_ids": [
+        3
+      ],
+      "chunks": 1
+    },
+    "k003-transformer-expertise.md": {
+      "hash": "3bc4e50342e8a11950b66a5cfdb1c4e3",
+      "point_ids": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "chunks": 5
+    },
+    "k001-github-integration.md": {
+      "hash": "b6ea25cdbf8d12da3c73859b1f1cb550",
+      "point_ids": [
+        9
+      ],
+      "chunks": 1
+    }
+  },
+  "next_id": 10,
+  "last_update": "2026-04-16 09:34:52"
+}
